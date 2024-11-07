@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles3.css' %}">
+    <link rel="stylesheet" href="{% static 'styles6.css' %}">
+    
+    <title>Buscar Ticket</title>
+</head>
+<body>
+     <nav class="nat">
+        <p>Busquedad de tickets</p>
+        <form id="searchForm">
+            <input type="text" id="searchQuery" name="search_query" placeholder="Ingrese la búsqueda">
+            <button type="submit">Buscar</button>
+        </form>
+    </nav>
+    <form action="{% url 'ticket_list' %}" method="post">
+        {% csrf_token %}
+        <button type="submit">Regresar</button>
+    </form>
+    <!-- Ventana flotante para mostrar el resultado -->
+    <div id="modal">
+        <div id="modalContent"></div>
+        <button onclick="closeModal()">Cerrar</button>
+    </div>
+
+    <script>
+        // Función para manejar el submit del formulario y realizar la búsqueda
+        document.getElementById("searchForm").onsubmit = async function(event) {
+            event.preventDefault();
+            const searchQuery = document.getElementById("searchQuery").value;
+
+            try {
+                const response = await fetch(`{% url 'search_ticket' %}?search_query=` + searchQuery);
+                const data = await response.text(); // Obtener el HTML del resultado
+                document.getElementById("modalContent").innerHTML = data;
+                openModal();
+            } catch (error) {
+                document.getElementById("modalContent").textContent = "Error al realizar la búsqueda.";
+                openModal();
+            }
+        };
+
+        // Función para abrir la ventana modal
+        function openModal() {
+            document.getElementById("modal").classList.add("active");
+        }
+
+        // Función para cerrar la ventana modal
+        function closeModal() {
+            document.getElementById("modal").classList.remove("active");
+        }
+    </script>
+</body>
+</html>

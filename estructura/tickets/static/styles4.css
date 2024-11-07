@@ -1,0 +1,116 @@
+/* Estilo general para el cuerpo */
+body {
+    font-family: Verdana, Geneva, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Estilo para el encabezado */
+h1 {
+    margin-top: -270px;
+    font-size: 2em;
+    color: #333;
+
+}
+
+/* Estilo para el contenedor de la información del ticket */
+.ticket-info {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    margin-top: 10px;
+    width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para los párrafos dentro del ticket */
+.ticket-info p {
+    margin: 5px 0;
+    font-size: 1em;
+    color: #333;
+}
+
+/* Estilo para los botones */
+.button-container button {
+    font-family: Verdana, Geneva, sans-serif;
+    padding: 10px 20px;
+    background-color: #5a6268;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.button-container button:hover {
+    background-color: #555555;
+}
+
+/* Estilo para el texto de 'Tickets en Cola' */
+h2 {
+    font-family: Verdana, Geneva, sans-serif;
+    margin-top: 20px;
+    font-size: 1.5em;
+    color: #555555;
+}
+
+/* Estilo para la lista de tickets en cola */
+ul {
+    font-family: Verdana, Geneva, sans-serif;
+    list-style-type: none;
+    padding: 0;
+    margin: 20px;
+}
+
+ul li {
+    background-color: #fff;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para el contenedor de Tickets en Cola (al costado izquierdo) */
+.ticket-cola-container {
+    position: absolute;
+    left: 20px;
+    top: 390px;
+    width: 1400px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para el botón de regresar */
+a {
+    font-family: Verdana, Geneva, sans-serif;
+    display: inline-block;
+    padding: 10px 14px;
+background-color: #5a6268;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px; /aaaaquiiii/
+    transition: background-color 0.3s;
+    font-size: 11px;
+    margin-left: -1330px;
+}
+
+a:hover {
+    background-color: #555555;
+}
+
+/* Para el caso en que no hay tickets */
+.ticket-info p, .ticket-cola-container p {
+    text-align: center;
+    color: #888;
+}

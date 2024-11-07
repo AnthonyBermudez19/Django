@@ -1,0 +1,166 @@
+/* Estilos para la barra de navegación */
+.navbar {
+    font-family: Verdana, Geneva, sans-serif;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #333;
+    padding: 12px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    box-sizing: border-box;
+    z-index: 900;
+    background: linear-gradient(135deg, #000000, #555555);
+    box-shadow: 6px 6px 11px rgba(0, 0, 0, 0.5);
+}
+
+
+
+
+
+
+
+
+.navbar form {
+    display: inline;
+    margin: 0;
+}
+
+.navbar button, .navbar select {
+    font-family: Verdana, Geneva, sans-serif;
+    background-color: #555555;
+    color: white;
+    border: none;
+    padding: 6px;
+    margin: 0;
+    cursor: pointer;
+    font-size: 13px;
+    border-radius: 4px;
+    box-shadow: 1px 1px 1px rgba(1, 0, 0, 0.5);
+}
+
+.navbar button:hover, .navbar select:hover {
+    background-color: #777;
+}
+
+
+
+/* Espacio superior para el contenido debido a la barra de navegación fija */
+body {
+    padding-top: 90px;
+    background: linear-gradient(135deg, #FFFFFF, #5a6268);
+    height: 100vh;
+}
+
+/* Estilos adicionales para el contenido principal */
+h1 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Estilo del texto "hola" */
+.navbar .letra {
+    font-size: 18px;
+    color: white;
+    margin-bottom: 13px;
+    text-align: center;
+    width: 40%;
+}
+
+#letr {
+    color: #FFFFFF;
+    font-size: 13px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.ticket-container {
+    font-family: Verdana, Geneva, sans-serif;
+    border: 0;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 20px;
+    background-color: #FFFFFF;
+    box-shadow: 3px 4px 9px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(135deg, #FFFFFF, #5a6268);
+}
+
+.ticket-container h2 {
+    margin: 0 0 10px 0;
+}
+
+.ticket-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.ticket-container li {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+}
+
+
+
+
+
+
+
+.btn {
+    display: inline-block;
+    padding: 9px 14px;
+    margin: 10px 0px 200px;
+    border: none;
+    border-radius: 9px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-add {
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 12px;
+    background-color: #5a6268;
+}
+
+.btn-view {
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 12px;
+    background-color: #5a6268;
+}
+
+.btn:hover {
+    opacity: 0.8;
+    transform: scale(1.05);
+}
+h1 {
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #333;
+}

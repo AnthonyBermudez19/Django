@@ -1,0 +1,136 @@
+/* Estilo para la barra .nat */
+.nat {
+    font-family: Verdana, Geneva, sans-serif;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;  /
+    box-sizing: border-box;
+    z-index: 1000;
+    background: linear-gradient(135deg, #000000, #555555);
+    box-shadow: 6px 6px 11px rgba(0, 0, 0, 0.5);
+}
+
+/* Alineación a la izquierda */
+.nat > * {
+    margin-left: 200px;
+}
+
+
+
+
+
+
+
+
+
+/* Estilo para la página */
+body {
+    font-family: Arial, sans-serif;
+
+    margin: 0;
+    padding: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    box-sizing: border-box;
+    background: linear-gradient(135deg, #FFFFFF, #5a6268);
+}
+
+h1.title {
+    font-family: Verdana, Geneva, sans-serif;
+    text-align: center;
+    font-size: 1.60em;
+    margin-bottom: 20px;
+}
+
+/* Estilo para el formulario */
+.ticket-form {
+    font-family: Verdana, Geneva, sans-serif;
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 3px 4px 7px rgba(0, 0, 0, 0.5);
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 1em;
+    margin-bottom: 5px;
+}
+
+input {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+}
+
+input:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+/* Estilo para el botón de enviar */
+.submit-btn {
+    font-family: Verdana, Geneva, sans-serif;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    background-color: #5a6268;
+}
+
+.submit-btn:hover {
+    background-color: #555555;
+}
+
+/* Estilo para el enlace "Regresar a la Lista" */
+.back-btn {
+    font-family: Verdana, Geneva, sans-serif;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    text-decoration: none;
+    color: white;
+    font-size: 1em;
+    background-color: #5a6268;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.back-btn:hover {
+    text-decoration: none;
+    background-color: #555555;
+    border-color: #555555;
+}
+
+#prioridad {
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+}

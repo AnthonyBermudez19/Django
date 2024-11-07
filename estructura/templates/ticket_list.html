@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Tickets</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles2.css' %}">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <!-- Barra de Navegación -->
+    <nav class="navbar">
+        <p class="letra">TICKETS</p>
+        <form action="{% url 'reset_id' %}" method="post">
+            {% csrf_token %}
+            <button type="submit">Reiniciar ID</button>
+        </form>
+        <form action="{% url 'download_tickets' tipo='ticket' %}" method="get">
+            <button type="submit">Descargar Tickets</button>
+        </form>
+        <form action="{% url 'download_tickets' tipo='ticketatendido' %}" method="get">
+            <button type="submit">Descargar Tickets Atendidos</button>
+        </form>
+        <form action="{% url 'search_ticket_page' %}" method="post">
+            {% csrf_token %}
+            <button type="submit">Busqueda de tickets</button>
+        </form>
+        <form action="{% url 'list_tickets' %}" method="get">
+            <label for="order" id="letr">Ordenar por:</label>
+            <select name="order" id="order">
+                <option value="nombre">Nombre</option>
+                <option value="apellido">Apellido</option>
+                <option value="dni">DNI</option>
+                <option value="id">ID</option>
+            </select>
+            <button type="submit" >Ordenar</button>
+        </form>
+    </nav>
+
+    <!-- Contenido Principal -->
+    <h1>Lista de Tickets</h1>
+
+
+    <div class="ticket-container">
+        <ul>
+            {% if tickets %}
+                {% for ticket in tickets %}
+                    <li>{{ ticket.nombre }} {{ ticket.apellido }} Dni: {{ ticket.dni }} Ticket: {{ ticket.id }}</li>
+                {% endfor %}
+            {% else %}
+                <li>No hay tickets agregados</li>
+            {% endif %}
+        </ul>
+    </div>
+    
+    <form action="{% url 'upload_csv' %}" method="post" enctype="multipart/form-data" class="upload-csv-form">
+        {% csrf_token %}
+        <input type="file" name="csv_file" accept=".csv" required>
+        <button type="submit">Cargar Archivo CSV</button>
+    </form>
+    
+    <a href="{% url 'addTicket' %}" class="btn btn-add">Añadir Nuevo Ticket</a>
+    <a href="{% url 'current_ticket' %}" class="btn btn-view">Ver Ticket Actual</a>
+</body>
+</html>
+
+

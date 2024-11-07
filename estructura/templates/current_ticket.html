@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ticket Actual</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles3.css' %}">
+    <link rel="stylesheet" href="{% static 'styles4.css' %}">
+</head>
+
+<body>
+    <nav class="nat">
+        <p>TICKETS</p>
+    </nav>
+    <h1>Ticket Actual</h1>
+    {% if ticket %}
+        <div class="ticket-info">
+            <p>{{ ticket.nombre }} {{ ticket.apellido }}</p>
+            <p>{{ ticket.dni }}</p>
+            <p>Numero Ticket: {{ ticket.id }}</p>
+        </div>
+
+       <div class="button-container">
+            <button type="button" onclick="removerTicketActual()">Atender y Remover Ticket</button>
+            <button type="button">Otro Botón</button>
+        </div>
+        
+    <script>   
+    function removerTicketActual() {
+        fetch("{% url 'eliminar_ticket' ticket.id %}", {
+            method: "POST",
+            headers: {
+                'X-CSRFToken': '{{ csrf_token }}',
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                alert("El ticket ha sido atendido.");
+                window.location.href = "{% url 'ticket_list' %}";  
+            } else {
+                alert("Hubo un error al atender el ticket.");
+            }
+        })
+        .catch(error => console.error("Error:", error));
+    }
+</script>
+    {% else %}
+        <p>No hay tickets en la cola.</p>
+    {% endif %}
+    
+<div class="ticket-cola-container">
+    <h2>Tickets en Cola</h2>
+    {% if nodos %}
+        <ul>
+            {% for ticket in nodos %}
+                <li>{{ ticket.nombre }} - {{ ticket.apellido }} - Dni: {{ ticket.dni }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No hay tickets en cola.</p>
+    {% endif %}
+</div>
+
+<a href="{% url 'ticket_list' %}">Volver a la Lista</a>
+
+
+</body>
+</html>

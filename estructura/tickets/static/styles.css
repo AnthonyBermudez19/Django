@@ -1,0 +1,30 @@
+/* Estilos para el formulario de carga de archivo CSV */
+form.upload-csv-form {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* Estilo para el campo de carga de archivo */
+form.upload-csv-form input[type="file"] {
+    padding: 5px;
+    font-size: 1rem;
+    margin-right: 10px;
+}
+
+/* Estilo para el botón de carga */
+form.upload-csv-form button[type="submit"] {
+    font-family: Verdana, Geneva, sans-serif;
+    background-color: #5a6268;
+    color: white;
+    padding: 5px 10px;
+    font-size: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form.upload-csv-form button[type="submit"]:hover {
+    background-color: #45a049;
+}

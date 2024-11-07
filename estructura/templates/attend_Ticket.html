@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atender Ticket</title>
+</head>
+<body>
+    <h1>Atender Ticket</h1>
+    {% if ticket %}
+        <p>
+            <strong>Nombre:</strong> {{ ticket.nombre }} <br>
+            <strong>Apellido:</strong> {{ ticket.apellido }} <br>
+            <strong>DNI:</strong> {{ ticket.dni }} <br>
+            <strong>Prioridad:</strong> {{ ticket.priority }} <br>
+        </p>
+        <form method="POST" action="{% url 'attend_ticket' %}">
+            {% csrf_token %}
+            <button type="submit">Confirmar Atención</button>
+        </form>
+    {% else %}
+        <p>No hay tickets disponibles para atender.</p>
+    {% endif %}
+    <a href="{% url 'ticket_list' %}">Volver a la Lista de Tickets</a>
+</body>
+</html>
